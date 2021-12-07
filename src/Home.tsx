@@ -1,17 +1,11 @@
 import "./Home.css";
 import ReactPlayer from "react-player"
 
-export interface HomeProps {
-}
-
-const Home = (props: HomeProps) => {
+const Home = () => {
   return (
     <main style={{
-      display:"flex",
-      /*backgroundColor: "#D4D8EC",*/
       backgroundColor: "white",
-      /*backgroundColor: "#CED4E6",*/
-      /*backgroundImage: `url(${Background})`,*/
+      display:"flex",
       height: "100vh",
       backgroundPosition: "center center",
       backgroundAttachment: "fixed",
@@ -21,9 +15,8 @@ const Home = (props: HomeProps) => {
       }}>
 
       <div style={{
-        padding: 30,
         /*backgroundColor:"rgba(0, 0, 0, 0.4)",*/
-
+        padding: 30,
         display:"flex",
         flex: 1,
         flexDirection: "column",
@@ -42,8 +35,9 @@ const Home = (props: HomeProps) => {
         }}
       >
         <ReactPlayer
-          style={{marginBottom: "100px"}}
+          style={{marginBottom: "50px"}}
           width={"700px"}
+          height={"700px"}
           playing={true}
           loop={true} 
           muted 

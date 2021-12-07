@@ -21,9 +21,6 @@ const Home = (props: HomeProps) => {
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       fontFamily: "Adina",
-      WebkitTextStrokeWidth: "1px",
-      WebkitTextStrokeColor: "black",
-      WebkitTextFillColor: "white"
       }}>
 
       <div style={{
@@ -57,43 +54,10 @@ const Home = (props: HomeProps) => {
             {src: 'logo_animated.mp4', type: 'video/mp4'},
           ]}
         />
-        MAN|FEST
+        <p className="alternateFont">MAN|FEST</p>
 
       </div>
 
-      <div
-        style={{
-          /*backgroundColor: "green",*/
-          display: "flex",
-          /*justifyContent: "space-between",*/
-        }}>
-        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
-          <i className='fab fa-twitter fa-2x'></i>
-        </a>
-        <div style={{
-          marginLeft:'15px',
-        }}>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.discord.gg/JGFyenFtsy">
-          <i className='fab fa-discord fa-2x' ></i>
-        </a>
-        </div>
-        <div
-        style={{
-          textAlign: 'center',
-          flex:'1 0 auto',
-          marginLeft:'35px',
-        }}>
-        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
-        <img
-          height='60px'
-          src={title_logo} alt="title_logo"/> </a>
-        </div>
-        <div></div>
-        <div style={{
-          float:"right",
-        }}>
-        </div>
-      </div>
 
       </div>
     </main>

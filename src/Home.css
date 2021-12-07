@@ -20,7 +20,12 @@ font-weight: bold;
                               'embedded-opentype', and 'svg' */
     }
 
-.ss01 {
-/*font-feature-settings: "ss01" 1;*/
-font-variant-alternates: stylistic();
+.alternateFont {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+    font-size:xx-large;
+    /*this doesnt work for some reason*/
+    font-variant-alternates:styleset(alt-M);
 }

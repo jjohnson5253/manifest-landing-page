@@ -31,6 +31,23 @@ const Home = (props: HomeProps) => {
         marginLeft: "auto",
         marginRight: "auto",
       }}>
+      <div
+        style={{
+          /*backgroundColor: "blue",*/
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flex: 1,
+          flexDirection: "column",
+        }}
+      >
+        
+      <img 
+        src={puffer_sequence}
+        alt="puffer_sequence"
+        height='350px'
+      />
+      </div>
 
       <div
         style={{
@@ -63,30 +80,6 @@ const Home = (props: HomeProps) => {
         <div style={{
           float:"right",
         }}>
-        </div>
-      </div>
-
-      <div
-        style={{
-          /*backgroundColor: "blue",*/
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flex: 1,
-          flexDirection: "column",
-        }}
-      >
-
-      <img 
-        src={puffer_sequence}
-        alt="puffer_sequence"
-        height='350px'
-      />
-        <div>
-        <div style={{
-          textShadow: "0 0 5px #000",
-        }}>
-        </div>
         </div>
       </div>
 

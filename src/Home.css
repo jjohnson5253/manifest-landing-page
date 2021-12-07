@@ -8,10 +8,11 @@
     }
 
 .alternateFont {
-    color: #0F0B3B;
+    font-feature-settings: "aalt";
+}
 
+.manifestHeader {
+    color: #0F0B3B;
     font-size:8vw;
-    /*this doesnt work for some reason*/
-    font-variant-alternates:styleset(alt-M);
     text-align: center;
 }

@@ -20,7 +20,10 @@ const Home = (props: HomeProps) => {
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      fontFamily: "Adina"
+      fontFamily: "Adina",
+      WebkitTextStrokeWidth: "1px",
+      WebkitTextStrokeColor: "black",
+      WebkitTextFillColor: "white"
       }}>
 
       <div style={{
@@ -49,6 +52,7 @@ const Home = (props: HomeProps) => {
           
           playing={true}
           loop={true} 
+          muted 
           url={[
             {src: 'logo_animated.mp4', type: 'video/mp4'},
           ]}

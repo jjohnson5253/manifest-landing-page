@@ -1,7 +1,4 @@
 import "./Home.css";
-
-//import logo_animated from './logo_animated.mp4'
-import title_logo from './title_logo.png'
 import ReactPlayer from "react-player"
 
 export interface HomeProps {

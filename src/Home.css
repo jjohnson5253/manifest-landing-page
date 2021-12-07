@@ -12,3 +12,10 @@ background-color:#F17B28;
 color:black;
 font-weight: bold;
 }
+
+@font-face {
+    font-family: 'Adina';
+    src: local('Adina'), url(fonts/Adina.otf) format('opentype');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }

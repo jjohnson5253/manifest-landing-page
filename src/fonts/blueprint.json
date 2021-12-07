@@ -1,0 +1,595 @@
+{
+    "name": "Integration Toggl, Airtable",
+    "flow": [
+        {
+            "id": 1,
+            "module": "toggl:TriggerEntries",
+            "version": 2,
+            "parameters": {
+                "__IMTCONN__": 3113555,
+                "start_date": "2020-12-02T23:04:00.000Z",
+                "limit": 10000
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 5,
+                    "y": -18
+                },
+                "restore": {
+                    "__IMTCONN__": {
+                        "label": "My Toggl connection (evan@manifest.world)"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account",
+                        "label": "Connection",
+                        "required": true
+                    },
+                    {
+                        "name": "start_date",
+                        "type": "date",
+                        "label": "Start Date",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "airtable:ActionCreateRecord",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 3113558
+            },
+            "mapper": {
+                "base": "appW0dgGuJd66SaZV",
+                "typecast": false,
+                "table": "Table 1",
+                "record": {
+                    "fldeS5e1eLhqgPWYB": "{{1.id}}",
+                    "fld6jDxwt485rrFpv": "{{1.start}}",
+                    "fld990Cs5hP7wEtum": "{{1.stop}}",
+                    "fldAYXKMPzBJuWdUM": "{{1.uid}}",
+                    "fldA6rRqTWrapTI3N": "{{1.description}}"
+                }
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                },
+                "restore": {
+                    "__IMTCONN__": {
+                        "label": "My Airtable connection"
+                    },
+                    "base": {
+                        "label": "Untitled Base"
+                    },
+                    "typecast": {
+                        "mode": "chose"
+                    },
+                    "table": {
+                        "label": "Table 1"
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "typecast",
+                        "type": "boolean",
+                        "label": "Smart links",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "record",
+                        "type": "collection",
+                        "label": "Record",
+                        "spec": [
+                            {
+                                "name": "fldeS5e1eLhqgPWYB",
+                                "label": "Time Entry ID",
+                                "type": "text"
+                            },
+                            {
+                                "name": "fld6jDxwt485rrFpv",
+                                "label": "Start",
+                                "type": "date",
+                                "time": false
+                            },
+                            {
+                                "name": "fld990Cs5hP7wEtum",
+                                "label": "End",
+                                "type": "date",
+                                "time": false
+                            },
+                            {
+                                "name": "fldAYXKMPzBJuWdUM",
+                                "label": "User ID",
+                                "type": "text"
+                            },
+                            {
+                                "name": "fldA6rRqTWrapTI3N",
+                                "label": "Description",
+                                "type": "text",
+                                "multiline": true
+                            }
+                        ]
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Time Entry ID",
+                        "label": "Time Entry ID",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Start",
+                        "label": "Start",
+                        "type": "date",
+                        "time": false
+                    },
+                    {
+                        "name": "End",
+                        "label": "End",
+                        "type": "date",
+                        "time": false
+                    },
+                    {
+                        "name": "User ID",
+                        "label": "User ID",
+                        "type": "text"
+                    },
+                    {
+                        "name": "Description",
+                        "label": "Description",
+                        "type": "text",
+                        "multiline": true
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "shatter": false,
+            "maxErrors": 3,
+            "autoCommit": false,
+            "sequential": false,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false
+        },
+        "designer": {
+            "orphans": [
+                [
+                    {
+                        "id": 3,
+                        "module": "toggl:GetSummaryReport",
+                        "version": 2,
+                        "parameters": {
+                            "__IMTCONN__": 3113555
+                        },
+                        "mapper": {
+                            "user_agent": "evan@manifest.stream",
+                            "workspace_id": 5650212,
+                            "since": "2016-06-20 19:26:44 GMT+02:00"
+                        },
+                        "metadata": {
+                            "designer": {
+                                "x": 145,
+                                "y": 343,
+                                "messages": [
+                                    {
+                                        "category": "link",
+                                        "severity": "warning",
+                                        "message": "The module is not connected to the data flow."
+                                    }
+                                ]
+                            },
+                            "restore": {
+                                "__IMTCONN__": {
+                                    "label": "My Toggl connection (evan@manifest.world)"
+                                },
+                                "workspace_id": {
+                                    "mode": "chose",
+                                    "label": "Manifest"
+                                },
+                                "grouping": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "subgrouping_ids": {
+                                    "mode": "chose"
+                                },
+                                "grouped_time_entry_ids": {
+                                    "mode": "chose"
+                                },
+                                "without_description": {
+                                    "mode": "chose"
+                                },
+                                "order_field": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "order_desc": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "distinct_rates": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "display_hours": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "billable": {
+                                    "mode": "chose",
+                                    "label": ""
+                                },
+                                "rounding": {
+                                    "mode": "chose",
+                                    "label": ""
+                                }
+                            },
+                            "parameters": [
+                                {
+                                    "name": "__IMTCONN__",
+                                    "type": "account",
+                                    "label": "Connection",
+                                    "required": true
+                                }
+                            ],
+                            "expect": [
+                                {
+                                    "name": "user_agent",
+                                    "type": "text",
+                                    "label": "User Agent",
+                                    "required": true
+                                },
+                                {
+                                    "name": "workspace_id",
+                                    "type": "select",
+                                    "label": "Workspace ID",
+                                    "required": true
+                                },
+                                {
+                                    "name": "since",
+                                    "type": "date",
+                                    "label": "Since"
+                                },
+                                {
+                                    "name": "until",
+                                    "type": "date",
+                                    "label": "Until"
+                                },
+                                {
+                                    "name": "grouping",
+                                    "type": "select",
+                                    "label": "Grouping",
+                                    "validate": {
+                                        "enum": [
+                                            "projects",
+                                            "clients",
+                                            "users"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "subgrouping_ids",
+                                    "type": "boolean",
+                                    "label": "Subgrouping IDs"
+                                },
+                                {
+                                    "name": "grouped_time_entry_ids",
+                                    "type": "boolean",
+                                    "label": "Grouped Time Entry IDs"
+                                },
+                                {
+                                    "name": "client_ids",
+                                    "type": "text",
+                                    "label": "Clients IDs"
+                                },
+                                {
+                                    "name": "project_ids",
+                                    "type": "text",
+                                    "label": "Project IDs"
+                                },
+                                {
+                                    "name": "user_ids",
+                                    "type": "text",
+                                    "label": "User IDs"
+                                },
+                                {
+                                    "name": "members_of_group_ids",
+                                    "type": "text",
+                                    "label": "Members of Group IDs"
+                                },
+                                {
+                                    "name": "or_members_of_group_ids",
+                                    "type": "text",
+                                    "label": "Or Members of Group IDs"
+                                },
+                                {
+                                    "name": "tag_ids",
+                                    "type": "text",
+                                    "label": "Tag IDs"
+                                },
+                                {
+                                    "name": "task_ids",
+                                    "type": "text",
+                                    "label": "Task IDs"
+                                },
+                                {
+                                    "name": "time_entry_ids",
+                                    "type": "text",
+                                    "label": "Time Entry IDs"
+                                },
+                                {
+                                    "name": "description",
+                                    "type": "text",
+                                    "label": "Description"
+                                },
+                                {
+                                    "name": "without_description",
+                                    "type": "boolean",
+                                    "label": "Without Description"
+                                },
+                                {
+                                    "name": "order_field",
+                                    "type": "select",
+                                    "label": "Order Field",
+                                    "validate": {
+                                        "enum": [
+                                            "title",
+                                            "duration",
+                                            "amount"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "order_desc",
+                                    "type": "select",
+                                    "label": "Order Desc",
+                                    "validate": {
+                                        "enum": [
+                                            "on",
+                                            "off"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "distinct_rates",
+                                    "type": "select",
+                                    "label": "Distinct Rates",
+                                    "validate": {
+                                        "enum": [
+                                            "on",
+                                            "off"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "display_hours",
+                                    "type": "select",
+                                    "label": "Display Hours",
+                                    "validate": {
+                                        "enum": [
+                                            "decimal",
+                                            "minutes"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "billable",
+                                    "type": "select",
+                                    "label": "Billable",
+                                    "validate": {
+                                        "enum": [
+                                            "yes",
+                                            "no",
+                                            "both"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "name": "rounding",
+                                    "type": "select",
+                                    "label": "Rounding",
+                                    "validate": {
+                                        "enum": [
+                                            "on",
+                                            "off"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "module": "airtable:ActionCreateRecord",
+                        "version": 3,
+                        "parameters": {
+                            "__IMTCONN__": 3113558
+                        },
+                        "mapper": {
+                            "base": "appW0dgGuJd66SaZV",
+                            "typecast": false,
+                            "table": "Table 1 copy",
+                            "record": {
+                                "fld3RQdXe1Q0XrFGr": "{{3.data[].items[].time_entry_ids}}",
+                                "fldViowstkHF83o7l": "{{3.data[].time}}",
+                                "fldpXIJIPPajbyWCC": "{{3.data[].id}}"
+                            }
+                        },
+                        "metadata": {
+                            "designer": {
+                                "x": 481,
+                                "y": 270
+                            },
+                            "restore": {
+                                "__IMTCONN__": {
+                                    "label": "My Airtable connection"
+                                },
+                                "base": {
+                                    "label": "Untitled Base"
+                                },
+                                "typecast": {
+                                    "mode": "chose"
+                                },
+                                "table": {
+                                    "label": "Table 1 copy"
+                                }
+                            },
+                            "parameters": [
+                                {
+                                    "name": "__IMTCONN__",
+                                    "type": "account",
+                                    "label": "Connection",
+                                    "required": true
+                                }
+                            ],
+                            "expect": [
+                                {
+                                    "name": "base",
+                                    "type": "select",
+                                    "label": "Base",
+                                    "required": true
+                                },
+                                {
+                                    "name": "typecast",
+                                    "type": "boolean",
+                                    "label": "Smart links",
+                                    "required": true
+                                },
+                                {
+                                    "name": "table",
+                                    "type": "select",
+                                    "label": "Table",
+                                    "required": true
+                                },
+                                {
+                                    "name": "record",
+                                    "type": "collection",
+                                    "label": "Record",
+                                    "spec": [
+                                        {
+                                            "name": "fld3RQdXe1Q0XrFGr",
+                                            "label": "Time Entry ID",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "fldViowstkHF83o7l",
+                                            "label": "Start",
+                                            "type": "date",
+                                            "time": false
+                                        },
+                                        {
+                                            "name": "fldY8LBo5xoHdgccc",
+                                            "label": "End",
+                                            "type": "date",
+                                            "time": false
+                                        },
+                                        {
+                                            "name": "fldpXIJIPPajbyWCC",
+                                            "label": "User ID",
+                                            "type": "text"
+                                        },
+                                        {
+                                            "name": "fldp5cQmTc0K6vrLD",
+                                            "label": "Description",
+                                            "type": "text",
+                                            "multiline": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "interface": [
+                                {
+                                    "name": "id",
+                                    "type": "text",
+                                    "label": "ID"
+                                },
+                                {
+                                    "name": "createdTime",
+                                    "type": "date",
+                                    "label": "Created Time"
+                                },
+                                {
+                                    "name": "Time Entry ID",
+                                    "label": "Time Entry ID",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Start",
+                                    "label": "Start",
+                                    "type": "date",
+                                    "time": false
+                                },
+                                {
+                                    "name": "End",
+                                    "label": "End",
+                                    "type": "date",
+                                    "time": false
+                                },
+                                {
+                                    "name": "User ID",
+                                    "label": "User ID",
+                                    "type": "text"
+                                },
+                                {
+                                    "name": "Description",
+                                    "label": "Description",
+                                    "type": "text",
+                                    "multiline": true
+                                }
+                            ]
+                        }
+                    }
+                ]
+            ]
+        },
+        "zone": "eu1.integromat.com"
+    }
+}

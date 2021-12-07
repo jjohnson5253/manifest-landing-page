@@ -1,8 +1,8 @@
 import "./Home.css";
 
-import Background from './underwater_bg.jpg';
-import puffer_sequence from './puffer_sequence.gif'
+//import logo_animated from './logo_animated.mp4'
 import title_logo from './title_logo.png'
+import ReactPlayer from "react-player"
 
 export interface HomeProps {
 }
@@ -11,18 +11,21 @@ const Home = (props: HomeProps) => {
   return (
     <main style={{
       display:"flex",
-      /*backgroundColor: "red",*/
-      backgroundImage: `url(${Background})`,
+      /*backgroundColor: "#D4D8EC",*/
+      backgroundImage: "linear-gradient(to bottom right, #C8D1E2, #D3D7E9)",
+      /*backgroundColor: "#CED4E6",*/
+      /*backgroundImage: `url(${Background})`,*/
       height: "100vh",
       backgroundPosition: "center center",
       backgroundAttachment: "fixed",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
+      fontFamily: "Adina"
       }}>
 
       <div style={{
         padding: 30,
-        backgroundColor:"rgba(0, 0, 0, 0.4)",
+        /*backgroundColor:"rgba(0, 0, 0, 0.4)",*/
 
         display:"flex",
         flex: 1,
@@ -41,12 +44,17 @@ const Home = (props: HomeProps) => {
           flexDirection: "column",
         }}
       >
-        
-      <img 
-        src={puffer_sequence}
-        alt="puffer_sequence"
-        height='350px'
-      />
+        <ReactPlayer
+          /*style={{boxShadow: "10px 10px 5px #aaaaaa"}}*/
+          
+          playing={true}
+          loop={true} 
+          url={[
+            {src: 'logo_animated.mp4', type: 'video/mp4'},
+          ]}
+        />
+        MAN|FEST
+
       </div>
 
       <div

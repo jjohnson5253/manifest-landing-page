@@ -9,7 +9,7 @@ const Home = (props: HomeProps) => {
     <main style={{
       display:"flex",
       /*backgroundColor: "#D4D8EC",*/
-      backgroundImage: "linear-gradient(to bottom right, #C8D1E2, #D3D7E9)",
+      backgroundColor: "white",
       /*backgroundColor: "#CED4E6",*/
       /*backgroundImage: `url(${Background})`,*/
       height: "100vh",
@@ -42,8 +42,8 @@ const Home = (props: HomeProps) => {
         }}
       >
         <ReactPlayer
-          /*style={{boxShadow: "10px 10px 5px #aaaaaa"}}*/
-          
+          style={{marginBottom: "100px"}}
+          width={"700px"}
           playing={true}
           loop={true} 
           muted 

@@ -21,11 +21,9 @@ font-weight: bold;
     }
 
 .alternateFont {
-    -webkit-text-fill-color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    color: #0F0B3B;
 
-    font-size:xx-large;
+    font-size:50px;
     /*this doesnt work for some reason*/
     font-variant-alternates:styleset(alt-M);
 }

@@ -1,6 +1,5 @@
 import "./Home.css";
 import ReactPlayer from "react-player"
-import { Widgets } from "@material-ui/icons";
 
 const Home = () => {
   return (

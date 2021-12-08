@@ -28,7 +28,7 @@ const Home = () => {
         }}>
           <ReactPlayer
             style={{
-              borderRadius: "20px",
+              borderRadius: "40px",
               overflow: "hidden",
             }}
             width={"100%"}

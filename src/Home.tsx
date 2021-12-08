@@ -5,33 +5,25 @@ const Home = () => {
   return (
     <main style={{
       backgroundColor: "white",
-
-      /*fontFamily: "Adina",*/
+      display:"flex",
+      height: "100vh",
       }}>
 
       <div style={{
-        /*backgroundColor:"rgba(0, 0, 0, 0.4)",*/
-        padding: "2vh",
-
-        marginLeft: "auto",
-        marginRight: "auto",
+        /*backgroundColor:"blue",*/
+        padding: "1vh",
+        display:"flex",
+        flex:1,
+        justifyContent:"center",
+        flexDirection: "column",
       }}>
-      <div
-        style={{
-          height: "96vh",
-          /*backgroundColor:"red",*/
-        }}
-      >
         <ReactPlayer
           style={{
-            marginBottom: "0%",
+            display:"flex",
             marginLeft: "auto",
-            marginRight: "auto"
-            /*paddingTop:"56.25%",
-            position:"relative"*/
+            marginRight: "auto",
           }}
-          /*width={"700px"}
-          height={"700px"}*/
+
           width={"75%"}
           height={"75%"}
           playing={true}
@@ -42,12 +34,13 @@ const Home = () => {
             {src: 'logo_animated.mp4', type: 'video/mp4'},
           ]}
         />
-        <p className="manifestHeader">
+        <p style={{
+          display:"flex",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }} className="manifestHeader">
           <span className="alternateFont">M</span>AN|FEST
         </p>
-
-      </div>
-
 
       </div>
     </main>

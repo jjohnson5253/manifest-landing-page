@@ -36,6 +36,7 @@ const Home = () => {
         />
         <p style={{
           display:"flex",
+          marginTop:"3%",
           marginLeft: "auto",
           marginRight: "auto",
         }} className="manifestHeader">

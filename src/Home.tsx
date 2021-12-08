@@ -22,14 +22,15 @@ const Home = () => {
             display:"flex",
             marginLeft: "auto",
             marginRight: "auto",
-            borderRadius: "0x25em",
+            borderRadius: "5px",
             overflow: "hidden",
             paddingLeft: "2%",
             paddingRight: "2%",
         }}>
           <ReactPlayer
             style={{
-
+              borderRadius: "20px",
+              overflow: "hidden",
             }}
             width={"100%"}
             height={"100%"}

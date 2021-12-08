@@ -17,23 +17,32 @@ const Home = () => {
         justifyContent:"center",
         flexDirection: "column",
       }}>
-        <ReactPlayer
-          style={{
+        <div style={{
             display:"flex",
             marginLeft: "auto",
             marginRight: "auto",
-          }}
+            borderRadius: "5px",
+            overflow: "hidden",
+            paddingLeft: "2%",
+            paddingRight: "2%",
+        }}>
+          <ReactPlayer
+            style={{
+              borderRadius: "40px",
+              overflow: "hidden",
+            }}
+            width={"100%"}
+            height={"100%"}
+            playing={true}
+            loop={true} 
+            muted
+            playsinline
+            url={[
+              {src: 'logo_animated.mp4', type: 'video/mp4'},
+            ]}
+          />
+        </div>
 
-          width={"75%"}
-          height={"75%"}
-          playing={true}
-          loop={true} 
-          muted
-          playsinline
-          url={[
-            {src: 'logo_animated.mp4', type: 'video/mp4'},
-          ]}
-        />
         <p style={{
           display:"flex",
           marginTop:"3%",

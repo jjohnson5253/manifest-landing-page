@@ -11,7 +11,7 @@ const Home = () => {
 
       <div style={{
         /*backgroundColor:"blue",*/
-        padding: "1vh",
+        marginTop: "5vh",
         display:"flex",
         flex:1,
         justifyContent:"center",

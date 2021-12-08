@@ -1,5 +1,6 @@
 import "./Home.css";
 import ReactPlayer from "react-player"
+import { Widgets } from "@material-ui/icons";
 
 const Home = () => {
   return (
@@ -17,23 +18,31 @@ const Home = () => {
         justifyContent:"center",
         flexDirection: "column",
       }}>
-        <ReactPlayer
-          style={{
+        <div style={{
             display:"flex",
             marginLeft: "auto",
             marginRight: "auto",
-          }}
+            borderRadius: "0x25em",
+            overflow: "hidden",
+            paddingLeft: "2%",
+            paddingRight: "2%",
+        }}>
+          <ReactPlayer
+            style={{
 
-          width={"75%"}
-          height={"75%"}
-          playing={true}
-          loop={true} 
-          muted
-          playsinline
-          url={[
-            {src: 'logo_animated.mp4', type: 'video/mp4'},
-          ]}
-        />
+            }}
+            width={"100%"}
+            height={"100%"}
+            playing={true}
+            loop={true} 
+            muted
+            playsinline
+            url={[
+              {src: 'logo_animated.mp4', type: 'video/mp4'},
+            ]}
+          />
+        </div>
+
         <p style={{
           display:"flex",
           marginTop:"3%",

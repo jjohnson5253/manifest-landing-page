@@ -11,19 +11,20 @@ const Home = () => {
 
       <div style={{
         /*backgroundColor:"rgba(0, 0, 0, 0.4)",*/
-        padding: 30,
+        padding: "2vh",
 
         marginLeft: "auto",
         marginRight: "auto",
       }}>
       <div
         style={{
+          height: "96vh",
           /*backgroundColor:"red",*/
         }}
       >
         <ReactPlayer
           style={{
-            marginBottom: "5%",
+            marginBottom: "0%",
             marginLeft: "auto",
             marginRight: "auto"
             /*paddingTop:"56.25%",
@@ -31,8 +32,8 @@ const Home = () => {
           }}
           /*width={"700px"}
           height={"700px"}*/
-          width={"85%"}
-          height={"85%"}
+          width={"75%"}
+          height={"75%"}
           playing={true}
           loop={true} 
           muted

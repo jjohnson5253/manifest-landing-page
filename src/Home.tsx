@@ -49,7 +49,7 @@ const Home = () => {
           marginLeft: "auto",
           marginRight: "auto",
         }} className="manifestHeader">
-          <span className="alternateFont">M</span>AN|FEST
+          WORLDS
         </p>
 
       </div>

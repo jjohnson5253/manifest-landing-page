@@ -18,7 +18,8 @@
 }
 
 .testLootHeader {
-    font-family: 'Times New Roman', Times, serif;
-    color: #0F0B3B;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
     text-align: center;
 }

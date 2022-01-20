@@ -16,3 +16,10 @@
     font-size:8vmin;
     text-align: center;
 }
+
+.testLootHeader {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}

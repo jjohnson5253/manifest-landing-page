@@ -9,7 +9,10 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 
 const LootTest = () => {
+
+    // wallet address to use for this app
     const [walletAddress, setWalletAddress] = useState("");
+    // nft loot bags found in this app
     const [nfts,setNfts]=useState([])
 
     // brief    async function to get Loot Bag NFTs per given address
@@ -30,13 +33,16 @@ const LootTest = () => {
         }
     }
 
+  // function to update wallet address state variable from input field
   function getWalletAddress(val)
   {
     setWalletAddress(val.target.value)
   }
-
+  
+  // function to call on button click
   function buttonClick(val)
   {
+    // get NFTs from wallet address
     fetchNfts(walletAddress)
   }
 
@@ -47,6 +53,7 @@ const LootTest = () => {
             Loot Test
           </p>
 
+          {/*input field and button */}
           <input type="text" onChange={getWalletAddress} placeholder="Enter wallet address..." id="myInput"></input>
           <button type="button" onClick={buttonClick}>Go</button>
 
@@ -55,6 +62,7 @@ const LootTest = () => {
           </p>
         </div>
 
+        {/*Render nft loot bags from state array */}
         {nfts.map((nft, index) => {
           return (
             <div key={index} style={{ marginTop: "0px", padding: "8px" }}>

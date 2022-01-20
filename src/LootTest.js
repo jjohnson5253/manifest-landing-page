@@ -3,52 +3,30 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 
 const LootTest = () => {
-
     //const [walletAddress, setWalletAddress] = useState("");
-    const [comments,setComments]=useState([])
+    const [nfts,setNfts]=useState([])
+
     useEffect(() => {
-        fetchComments();
+        fetchNfts('0xd82724a01bce06bbc3face916bd14b5b06ef59bd');
       }, [])
     useEffect(() => {
-    console.log(comments)
-    }, [comments])
+    console.log(nfts)
+    }, [nfts])
 
-    const fetchComments=async()=>{
-        const resp = await axios.get('https://deep-index.moralis.io/api/v2/0xd82724a01bce06bbc3face916bd14b5b06ef59bd/nft/0xFF9C1b15B16263C61d017ee9F65C50e4AE0113D7?chain=eth&format=decimal', {
+    // brief    async function to get Loot Bag NFTs per given address
+    // param    [in] walletAddress: wallet to read from
+    const fetchNfts=async(walletAddress)=>{
+        // set request string to send to Moralis NFT API
+        const requestString = 'https://deep-index.moralis.io/api/v2/' + walletAddress + '/nft/0xFF9C1b15B16263C61d017ee9F65C50e4AE0113D7?chain=eth&format=decimal'
+        const res = await axios.get(requestString, {
             headers: {
                 'accept': `application/json`,
                 'x-api-key': 'KzIg5Dtp5dBhRcvGxGLJgKUoJJeWb0ceTkMykz3yOO8arvkzqkijXswbyzCA7bD0'
             }
         });
-
-        setComments(resp.data)    
+        // set 'nfts' state array
+        setNfts(res.data.result)
     }
-
-    /*axios.get('https://deep-index.moralis.io/api/v2/0xd82724a01bce06bbc3face916bd14b5b06ef59bd/nft/0xFF9C1b15B16263C61d017ee9F65C50e4AE0113D7?chain=eth&format=decimal', {
-        headers: {
-          'accept': `application/json`,
-          'x-api-key': 'KzIg5Dtp5dBhRcvGxGLJgKUoJJeWb0ceTkMykz3yOO8arvkzqkijXswbyzCA7bD0'
-        }
-    })
-    .then((res) => {
-        console.log(res.data)
-        let tmpArray = []
-        for (var i = 0; i < ; i++) {
-            tmpArray.push(res.data.results[i].NeededInfo)
-        }
-        //setTokenIds(Object.values(res.data))
-        //console.log(tokenIds)
-    })
-    .catch((error) => {
-        console.error(error)
-    })*/
-
-//function getWallet(val)
-//{
-    //setWalletAddress(val.target.value)
-    //console.log("hey")
-    //console.log(tokenIds)
-//}
 
   return (
     <div style={{
@@ -65,7 +43,7 @@ const LootTest = () => {
         {/*<input type="text" onChange={getWallet}/>*/}
         </div>
 
-    <div>
+    {/*<div>
       {
         comments && comments.map(comment=>{
           return(
@@ -77,21 +55,21 @@ const LootTest = () => {
 
         })
       }
-    </div>
+    </div>*/}
 
         {/*<p className="testLootHeader">
             LootTest
         </p>*/}
 
-        {/* 
-        {tokenIds.products.map((tokenIddex) => {
+        
+        {nfts.map((tokenIddex) => {
           return (
             <div>
             </div>)
         })} 
-        /*}
+        
 
-        {/*{tokenIds.map((tokenId, index) => {
+        {/*{nfts.map((tokenId, index) => {
           return (
             <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px" }}>
               <div>Address: {tokenId.address}</div>

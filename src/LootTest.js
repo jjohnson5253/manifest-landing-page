@@ -5,7 +5,7 @@
 // Copyright Manifest 2022
 //
 import "./Home.css";
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 
 const LootTest = () => {
@@ -19,7 +19,7 @@ const LootTest = () => {
     // param    [in] walletAddress: wallet to read from
     const fetchNfts=async(walletAddress)=>{
         // set request string to send to Moralis NFT API. Don't run if walletAddress has not been set
-        if(walletAddress!='')
+        if(walletAddress!=='')
         {
           const requestString = 'https://deep-index.moralis.io/api/v2/' + walletAddress + '/nft/0xFF9C1b15B16263C61d017ee9F65C50e4AE0113D7?chain=eth&format=decimal'
           const res = await axios.get(requestString, {
